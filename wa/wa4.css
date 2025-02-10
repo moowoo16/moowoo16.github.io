@@ -13,10 +13,10 @@ body {
   /* Selectors to be matched up with rulesets */
 
   
-  .card article img
-  .card footer
-  .card header
-  .card
+  .card article img,
+  .card footer,
+  .card header,
+  .card,
   
   /* Rulesets to be matched up with selectors */
   
@@ -25,7 +25,7 @@ body {
     height: 22em;
     margin: 5em auto;
     background-color: red;
-    border: 0.2em solid black;
+    border: 0.4em solid black;
     border-radius: 1.5em;
   }
   
@@ -41,7 +41,7 @@ body {
   
   .card article img {
     float: right;
-    max-height: 100%
+    max-height: 100%;
     }
 
     /* styles specific to the setup of the card container */
@@ -62,7 +62,7 @@ body {
     }
 
     footer {
-    font-size: 1.875em;
+    font-size: 1.6em;
     line-height: 1.5625em;
     }
 
@@ -70,7 +70,7 @@ body {
     /* styles specific to the main business card contents */
     article {
     height: 9em;
-    background-color: rgba(rgba(0, 0, 0, 0.338));
+    background-color: rgba(0, 0, 0, 0.338);
     }
 
     article, p {
