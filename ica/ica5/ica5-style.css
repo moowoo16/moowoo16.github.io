@@ -1,4 +1,5 @@
-* {
+
+  * {
     box-sizing: border-box;
   }
   
@@ -40,9 +41,17 @@
   
   /* Your CSS below here */
 
-.header {
-    height: 40mm;
-    background-image: url(top-image.png);
-    background-size: cover ;
-    background-position: center;
-}
+  article {
+    border-top: 1mm solid red;
+    border-bottom: 1mm solid red;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0) 20%, rgba(0,0,0,0) 80%, rgba(0,0,0,0.3)),
+    url(top-image.png) no-repeat left top, 
+    url(bottom-image.png) no-repeat left bottom;
+    background-color: white;
+  }
+
+  h1 {
+    background-image: url(logo.png);
+    border-radius: 64px;
+    box-shadow: 3px 3px 3px black;
+  }
