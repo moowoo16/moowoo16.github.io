@@ -32,7 +32,7 @@
     background-color: lavender;
 }
 
-@media screen and (max-height: 800px) {
+@media screen and (min-height: 800px) {
    #tallScreen {
         background-color: orange;
     }
