@@ -76,3 +76,30 @@ body {
   aside {
     flex: 1;
   }
+
+  @media (max-width: 499px) {
+    .grid {
+      flex-direction: column;
+    }
+    
+    .photos {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .photos img {
+      max-width: 400px;
+    }
+  }
+
+  @media (min-width: 500px) {
+    .grid {
+      display: flex
+    }
+
+    .photos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
