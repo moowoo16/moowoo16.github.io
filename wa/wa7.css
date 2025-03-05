@@ -11,7 +11,7 @@ h1{
     color: azure;
     font-style: italic;
     text-decoration: underline dotted orange;
-    transition: color 0.5 ease;
+    transition: color 1s ease;
 }
 
 h1:hover {
