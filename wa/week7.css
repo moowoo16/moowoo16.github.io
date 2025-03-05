@@ -2,35 +2,100 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: blanchedalmond;
+    background-color: rgb(246, 97, 169);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    position: relative;
 }
+
+h1{
+    color: azure;
+    font-style: italic;
+    text-decoration: underline dotted orange;
+    transition: color 0.5 ease;
+}
+
+h1:hover {
+    color: blue;
+}
+
 nav{
-    height: 50vh;
+    height: 60vh;
     display:flex;
     flex-direction: row;
     justify-content: space-between;
     height:20px;
-    background-color: blueviolet;
+    background-color: rgb(145, 233, 108);
+    transition: background-color 0.5s ease-in-out;
 }
 nav a{
     width:10vw;
     text-align: center;
     text-decoration: none;
-    color:black;
+    color:rgb(166, 89, 222);
 }
 
+nav:hover {
+    background-color: rgb(232, 236, 113);
+}
 
 img{
     width:30vw;
     height: 30vh;
+    border-radius: 50px;
+    transition: transform 0.5s ease-in-out;
+}
+
+img:hover{
+    transform: rotate(180deg);
 }
 
 #red-ball{
-    background-color: crimson;
-    width: 20px;
-    height:20px;
+    background-color: rgb(46, 221, 200);
+    width: 50px;
+    height:50px;
     border-radius: 50%;
     position: absolute;
     left:5vw;
     top:0;
+    animation: bounce 1s infinite alternate-reverse;
+}
+
+#blue-ball{
+    background-color: blue;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    right: 5vw;
+    top: 0;
+    animation: bounce 1.5s infinite alternate-reverse;
+}
+
+#blue-ball2{
+    background-color: rgb(120, 170, 223);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    right: 5vw;
+    top: 70vw;
+    animation: sideBounce 2s infinite alternate-reverse;
+}
+
+@keyframes bounce {
+    from {
+        top: 0;
+    }
+    to {
+        top: 650px;
+    }
+}
+
+@keyframes sideBounce {
+    from {
+        left: 0;
+    }
+    to {
+        left: 650px;
+    }
 }
