@@ -133,7 +133,7 @@ main {
 }
 
 
-@media (min-width: 768px) {
+@media (min-width: 400px) {
     main {
         grid-template-columns: repeat(2, 1fr);
     }
