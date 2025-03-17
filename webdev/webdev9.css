@@ -19,6 +19,7 @@ button {
     background: rgb(234, 95, 95);
     color: white;
     font-weight: 400;
+    text-align: center;
     padding: 1rem 1.5rem;
     border-radius: 1rem;
     max-width: 20ch;
