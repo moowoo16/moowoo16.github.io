@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width", inital-scale="1.0">
+    <title>ICA10</title>
+    <style>
+        .box {
+            background-color: pink;
+            border: 2px solid rgb(130, 72, 130);
+            height:100px;
+            width: 100px;
+            margin-top: 20px;
+            left: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="name">Hello!</h1>
+    <button>Click me!</button>
+    <div class="box"></div>
+    <br>
+    <img src="/img/cold.jpeg" alt="Cold" width="400" />
+
+    <script>
+        let box = document.querySelector('.box');
+        box.addEventListener('click', changeColor);
+        
+        function changeColor () {
+            box.style = "background-color: skyblue; border: 5px dotted purple";
+        }
+
+        console.log('Hello WOrld!');
+        let btn = document.querySelector('button');
+
+        btn.addEventListener('click',updateName)
+
+        function updateName () {
+            let name = document.querySelector('.name');
+            const input = prompt ('Enter a new name!');
+            name.textContent = input;
+        }
+
+        let iceCream = "Vanilla";
+        if (iceCream === "Vanilla") {
+            alert("Hi!")
+            alert("Welcome to my website!!!!!")
+        }
+
+        const myImage = document.querySelector('img');
+        myImage.addEventListener("click", ()=> {
+            const mySrc = myImage.getAttribute("src");
+            if (mySrc === "/img/cold.jpeg"){
+                myImage.setAttribute("src", "/img/warm.jpeg");
+            } else {
+                myImage.setAttribute("src", "/img/cold.jpeg")
+            }
+        });
+
+    </script>
+</body>
