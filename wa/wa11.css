@@ -1,7 +1,7 @@
 h1 {
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-align: center;
-    text-decoration: wavy 2px cornflowerblue;
+    text-decoration: underline dotted 3px cornflowerblue;
     color: rgb(226, 28, 248);
     margin-top: 20px;
     font-size: 3rem;
