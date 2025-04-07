@@ -14,8 +14,8 @@
     <div class="full-img">
       <img
         class="displayed-img"
-        src="images/pic1.jpg"
-        alt="Closeup of a blue human eye" />
+        src="/img/bigsur.jpeg"
+        alt="Big Sur coast" />
       <div class="overlay"></div>
       <button class="dark">Darken</button>
     </div>
@@ -26,22 +26,50 @@
     <script>
         const displayedImage = document.querySelector('.displayed-img');
         const thumbBar = document.querySelector('.thumb-bar');
-
+        
         const btn = document.querySelector('button');
         const overlay = document.querySelector('.overlay');
 
         /* Declaring the array of image filenames */
-
+        const imageFilenames = ['bigsur.jpeg', 'bridge.jpeg','UCSB.jpeg', 'JT.jpeg', 'rocks.jpeg']
         /* Declaring the alternative text for each image file */
-
+        const altText = {
+            'bigsur.jpeg': 'Big Sur coast',
+            'bridge.jpeg': 'Golden Gate Bridge view from beach',
+            'UCSB.jpeg': 'UC Santa Barbara vibes',
+            'JT.jpeg': 'Joshua Tree with friends',
+            'rocks.jpeg': 'JTree rocks!!'
+        }
         /* Looping through images */
+        for (let i = 0; i < imageFilenames.length; i++) {
+            const newImage = document.createElement('img');
+            const filename = imageFilenames [i];
+            newImage.setAttribute('src', '/img/'+ filename);
+            newImage.setAttribute('alt', altText[filename]);
+            thumbBar.appendChild(newImage);
 
-        const newImage = document.createElement('img');
-        newImage.setAttribute('src', xxx);
-        newImage.setAttribute('alt', xxx);
-        thumbBar.appendChild(newImage);
+            newImage.addEventListener('click', () => {
+            displayedImage.setAttribute('src', '/img/' + filename);
+            displayedImage.setAttribute('alt', altText[filename]);
+        });    
+        }
+
 
         /* Wiring up the Darken/Lighten button */
+        btn.addEventListener('click', () => {
+            const currentClass = btn.getAttribute('class');
+
+            if (currentClass === 'dark') {
+                btn.setAttribute('class', 'light');
+                btn.textContent = 'Lighten';
+                overlay.style.backgroundColor = 'rgb(0 0 0 / 50%)';
+            } else {
+                btn.setAttribute('class', 'dark');
+                btn.textContent = 'Darken';
+                overlay.style.backgroundColor = 'rgb(0 0 0 / 0%)';
+            }
+            });
+
     </script>
 </body>
 </html>
