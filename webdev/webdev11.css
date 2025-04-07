@@ -71,7 +71,7 @@
     top: 30%;
     transform: translatez(-100px);
     border-radius: 1000px 1000px 0 0;
-    border-right: 2vw solid #543a0c;
+    border-right: 2vw solid #61d4e8;
     background: #222;
   }
   
@@ -84,7 +84,7 @@
     top: 25%;
     left: 5%;
     background: skyblue 0 3px calc(var(--height) * 1) rgba(0, 0, 0, 0.35);
-    background-image: url('https://cybersandbox.ca/wp-content/uploads/2021/12/fw-wall-2.gif');
+    background-image: url('https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExb205N2RrbTk2dmE5NGNnbmgxdmt1YTV0YmM1MHBybGcxNDRxYTY4eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/H7F0zSaC9ZHZC/giphy.gif');
     background-size: 100% 100%;
     background-position: center;
   }
@@ -126,7 +126,7 @@
     min-width: 100px;
     background-color: transparent;
     box-shadow: unset;
-    background-image: url(https://cybersandbox.ca/wp-content/uploads/2024/11/pine-tree-1.png);
+    background-image: url('https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZzJ5bzBkMW9zZXAyZXltNTMyMGNvbnI3bHhkbzZlb3JwN2p3aW9zcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/wTpkLqAZf3NFcgzQ4J/giphy.gif');
     background-size: contain;
     background-position: bottom center;
     background-repeat: no-repeat;
@@ -228,7 +228,7 @@
   
   .cell .top-wall {
     background: cyan;
-    background-image: url('https://cybersandbox.ca/wp-content/uploads/2021/11/b-noise.gif');
+    background-image: url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ3o0dDI5d3JhZWdvcW40Mm9tOHZmdXV1b3o0aG11eWgzZm9qaGpxNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Z9afx21K3QUxi/giphy.gif');
     background-size: cover;
   }
   
