@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="ica12.css">
-    <title>Document</title>
+    <title>Christmas Trivia</title>
 </head>
 <body>
     <div class="app">
@@ -24,9 +24,15 @@
           <!-- <a class="answer button" id="js-tweet" target="_blank" rel="noreferrer">Show me the answer!</a> -->
         </section>
       </div>
+
       <script>
-        var newBtn = document.querySelector('#js-new-quote').addEventListener('click', getQuote);
-        var anwserBtn = document.querySelector('#js-tweet').addEventListener('click', displayAnswer(current.answer));
+        var newBtn = document.querySelector('#js-new-quote');
+        newBtn.addEventListener('click', getQuote);
+        
+        var answerBtn = document.querySelector('#js-tweet');
+        answerBtn.addEventListener('click',() => displayAnswer(current.answer));
+        
+        var answerText = document.querySelector("#js-answer-text");
         
         var endpoint = "https://trivia.cyberwisp.com/getrandomchristmasquestion";
 
@@ -50,6 +56,8 @@
                 current.question = json.question;
                 current.answer = json.answer;
 
+                answerText.textContent = '';
+
             } catch(err) {
                 console.log(err);
                 alert('Fail');
@@ -62,9 +70,10 @@
         }
 
         function displayAnswer (answer) {
-            const anwserText = document.querySelector('#js-answer-text');
-            anwserText.textContent = answer;
+            answerText.textContent = answer;
         }
+
+        getQuote();
       </script>
 </body>
 </html>
