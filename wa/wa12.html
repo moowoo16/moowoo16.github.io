@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Assignment 12 - Quote Machine</title>
+  <title>Random Quote Machine</title>
   <link rel="stylesheet" href="wa12.css">
 </head>
 <body>
@@ -16,7 +16,9 @@
 
   <div id="description">
     <p>
-      This quote machine uses the <a href="https://github.com/lukePeavey/quotable" target="_blank">Quotable API</a> to fetch random quotes. I extended the project by adding a loading message while the quote is being fetched, and styled the layout with my own CSS.
+      This quote machine uses the free Quotable API to fetch random quotes from authors across the world. 
+      When you click the "Get Quote" button, a loading message appears, and then the quote and author display dynamically. 
+      I customized the layout with CSS to create a bold, purple-themed style.
     </p>
   </div>
 
@@ -26,18 +28,18 @@
       const authorText = document.getElementById('author');
       const loading = document.getElementById('loading');
 
-      loading.style.display = 'block';
       quoteText.textContent = '';
       authorText.textContent = '';
+      loading.style.display = 'block';
 
       try {
-        const response = await fetch('https://api.quotable.io/random');
+        const response = await fetch("https://api.quotable.io/random");
         const data = await response.json();
 
         quoteText.textContent = `"${data.content}"`;
         authorText.textContent = `— ${data.author}`;
         loading.style.display = 'none';
-      } catch (error) {
+      } catch (err) {
         quoteText.textContent = 'Failed to fetch quote. Please try again.';
         loading.style.display = 'none';
       }

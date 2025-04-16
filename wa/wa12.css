@@ -1,52 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Ubuntu:wght@400;700&display=swap');
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f8ff;
+  font-family: 'Quicksand', sans-serif;
+  background-color: #6a0dad;
   text-align: center;
   padding: 40px;
+  color: #fff;
 }
 
 #quote-box {
-  background-color: #ffffff;
-  border-radius: 15px;
+  background-color: #e6d6ff;
+  border-radius: 16px;
   padding: 30px;
   max-width: 600px;
   margin: auto;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  color: #333;
 }
 
 #quote {
-  font-size: 1.5em;
-  margin-bottom: 10px;
+  font-size: 1.6em;
+  margin-bottom: 15px;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 #author {
   font-size: 1.2em;
   margin-bottom: 20px;
-  color: #555;
+  color: #5b2677;
 }
 
 #loading {
   display: none;
   font-style: italic;
-  color: #888;
+  color: #8e44ad;
 }
 
 button {
-  padding: 10px 20px;
+  padding: 12px 30px;
   font-size: 1em;
-  background-color: #007acc;
+  background-color: #8e44ad;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+  font-family: 'Quicksand', sans-serif;
 }
 
 button:hover {
-  background-color: #005fa3;
+  background-color: #732d91;
 }
 
 #description {
   margin-top: 40px;
-  font-size: 0.9em;
-  color: #333;
+  font-size: 1em;
+  color: #f0e5ff;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
