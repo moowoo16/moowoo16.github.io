@@ -8,7 +8,7 @@ body {
   color: #fff;
 }
 
-#quote-box {
+.app {
   background-color: #e6d6ff;
   border-radius: 16px;
   padding: 30px;
@@ -18,22 +18,22 @@ body {
   color: #333;
 }
 
-#quote {
+header {
+  font-size: 2em;
+  font-family: 'Ubuntu', sans-serif;
+  margin-bottom: 20px;
+}
+
+.quote-text {
   font-size: 1.6em;
   margin-bottom: 15px;
   font-family: 'Ubuntu', sans-serif;
 }
 
-#author {
+#js-author-text {
   font-size: 1.2em;
   margin-bottom: 20px;
   color: #5b2677;
-}
-
-#loading {
-  display: none;
-  font-style: italic;
-  color: #8e44ad;
 }
 
 button {
@@ -51,13 +51,4 @@ button {
 
 button:hover {
   background-color: #732d91;
-}
-
-#description {
-  margin-top: 40px;
-  font-size: 1em;
-  color: #f0e5ff;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
 }
