@@ -12,7 +12,7 @@ for (let i = 0; i < 10; i++) {
     input.dataset.index = i;
 
     const button = document.createElement('button');
-    button.textContent = "Unlock";
+    button.textContent = "Digit";
 
     button.addEventListener('click', () => {
         unlockInput(input, button);
