@@ -1,53 +1,102 @@
-const formContainer = document.getElementById('formContainer');
-const message = document.getElementById('message');
+const inputGroups = [document.getElementById("group0"), document.getElementById("group1"), document.getElementById("group2")];
+const finalPrompt = document.getElementById("finalPrompt");
+const progressMessage = document.getElementById("progressMessage");
 
-for (let i = 0; i < 10; i++) {
-    const inputGroup = document.createElement('div');
-    inputGroup.classList.add('inputGroup');
+let inputs = [];
 
-    const input = document.createElement('input');
-    input.type = 'text';
-    input.maxLength = 1;
-    input.disabled = true;
-    input.dataset.index = i;
+let currentIndex = null;
+let inputTimer = null;
 
-    const button = document.createElement('button');
-    button.textContent = "Digit";
+function createInputBlock(i) {
+  const block = document.createElement("div");
+  block.classList.add("input-block");
 
-    button.addEventListener('click', () => {
-        unlockInput(input, button);
-    });
+  const input = document.createElement("input");
+  input.type = "text";
+  input.maxLength = 1;
+  input.disabled = true;
 
-    inputGroup.appendChild(input);
-    inputGroup.appendChild(button);
-    formContainer.appendChild(inputGroup);
+  const button = document.createElement("button");
+  button.textContent = "Unlock";
+  button.disabled = true;
 
-    if (i === 2 || i === 5) {
-        const dash = document.createElement('span');
-        dash.textContent = '-';
-        dash.style.margin = '10px';
-        formContainer.appendChild(dash);
-    }
-}
-
-function unlockInput(input, button) {
+  button.addEventListener("click", () => {
     input.disabled = false;
     input.focus();
     button.disabled = true;
-    message.textContent = "You have 1 second to type!";
+    button.classList.remove("active");
 
-    const timer = setTimeout(() => {
-        if (input.value === '') {
-            input.disabled = true;
-            button.disabled = false;
-            message.textContent = "Too slow :( Try again!";
-        } else {
-            message.textContent = "KEEP GOING!";
-        }
-    }, 1000);
+    if (inputTimer) clearTimeout(inputTimer);
+    inputTimer = setTimeout(() => {
+      input.disabled = true;
+      progressMessage.textContent = "TOO SLOW!";
+      pickNextDigit();
+    }, 2000);
+  });
 
-    input.addEventListener('input', () => {
-        clearTimeout(timer);
-        button.disabled = false;
-    }, { once: true });
+  input.addEventListener("input", () => {
+    input.disabled = true;
+    clearTimeout(inputTimer);
+    progressMessage.textContent = "KEEP GOING!";
+    checkAllFilled();
+    pickNextDigit();
+  });
+
+  block.appendChild(input);
+  block.appendChild(button);
+
+
+  if (i < 3) inputGroups[0].appendChild(block);
+  else if (i < 6) inputGroups[1].appendChild(block);
+  else inputGroups[2].appendChild(block);
+
+  inputs.push({ input, button });
 }
+
+for (let i = 0; i < 10; i++) {
+  createInputBlock(i);
+}
+
+function pickNextDigit() {
+  const remaining = inputs
+    .map((el, i) => (el.input.disabled && el.input.value === "") ? i : null)
+    .filter(i => i !== null);
+
+  if (remaining.length === 0) return;
+
+  const next = remaining[Math.floor(Math.random() * remaining.length)];
+  inputs[next].button.disabled = false;
+  inputs[next].button.classList.add("active");
+  currentIndex = next;
+}
+
+function checkAllFilled() {
+  const filled = inputs.every(obj => obj.input.value !== "");
+  if (filled) {
+    progressMessage.textContent = "ALL DONE!";
+    finalPrompt.classList.remove("hidden");
+  }
+}
+
+function submitYes() {
+  confetti({
+    particleCount: 150,
+    spread: 100,
+    origin: { y: 0.6 }
+  });
+  finalPrompt.innerHTML = "<p>🎉 Thanks! Nice phone number. 🎉</p>";
+}
+
+function submitNo() {
+  finalPrompt.classList.add("hidden");
+  inputs.forEach(obj => {
+    obj.input.value = "";
+    obj.input.disabled = true;
+    obj.button.disabled = true;
+    obj.button.classList.remove("active");
+  });
+  progressMessage.textContent = "TRY AGAIN!";
+  pickNextDigit();
+}
+
+pickNextDigit();
